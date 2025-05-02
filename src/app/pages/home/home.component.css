@@ -1,0 +1,58 @@
+.page-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #c8f0e2, #b3e5fc); /* santé : vert d'eau + bleu ciel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0b3d91;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .card-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .role-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    width: 260px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .role-card img {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .role-card h2 {
+    color: #00796b;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .role-card p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  

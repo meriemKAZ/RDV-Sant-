@@ -1,0 +1,27 @@
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+  }
+  .day {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #eee;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  .day.has-event {
+    border: 2px solid red;
+  }
+  .popup {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  

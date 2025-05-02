@@ -1,0 +1,80 @@
+.page-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #c8f0e2, #b3e5fc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .form-card {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #00796b;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 18px;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    width: 100%;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #005f56;
+  }
+  
+  .toggle {
+    margin-top: 16px;
+    font-size: 0.95rem;
+  }
+  
+  .toggle a {
+    color: #00796b;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+  
+  .error {
+    color: #d32f2f;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 4px;
+  }
+  
