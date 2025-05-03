@@ -14,7 +14,10 @@ export class AuthService {
     return this.http.post<any>('http://localhost:3000/api/auth/login', data);
   }
   creerRendezVous(data: any) {
-    const token = localStorage.getItem('tokenClient');
+    let token = localStorage.getItem('tokenClient');
+    if (token === undefined) {
+      token =  localStorage.getItem('token');
+    }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.post<any>('http://localhost:3000/api/rendezvous', data, { headers });
   }
@@ -27,7 +30,10 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/register`, data);
   }
   getMesRDV(): Observable<any[]> {
-    const token = localStorage.getItem('tokenClient');
+    let token = localStorage.getItem('tokenClient');
+    if (token === undefined) {
+      token =  localStorage.getItem('token');
+    }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<any[]>('http://localhost:3000/api/rendezvous/mine', { headers });
   }
@@ -36,22 +42,34 @@ export class AuthService {
     return this.http.get<any[]>(`http://localhost:3000/api/rendezvous/mine/${clientId}`);
   }
   updateRendezVous(rdvId: string, data: any): Observable<any> {
-    const token = localStorage.getItem('tokenClient');
+    let token = localStorage.getItem('tokenClient');
+    if (token === undefined) {
+      token =  localStorage.getItem('token');
+    }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.put<any>(`http://localhost:3000/api/rendezvous/${rdvId}`, data, { headers });
   }
   deleteRendezVous(rdvId: string): Observable<any> {
-    const token = localStorage.getItem('tokenClient');
+    let token = localStorage.getItem('tokenClient');
+    if (token === undefined) {
+      token =  localStorage.getItem('token');
+    }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete<any>(`http://localhost:3000/api/rendezvous/${rdvId}`, { headers });
   }
   getMedecinRendezVous(): Observable<any[]> {
-    const token = localStorage.getItem('tokenPro');
+    let token = localStorage.getItem('tokenPro');
+    if (token === undefined) {
+      token =  localStorage.getItem('token');
+    }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<any[]>('http://localhost:3000/api/rendezvous/pro', { headers });
   }
   mettreAJourStatutRdv(id: string, statut: 'confirmé' | 'annulé'): Observable<any> {
-    const token = localStorage.getItem('tokenPro');
+    let token = localStorage.getItem('tokenPro');
+    if (token === undefined) {
+      token =  localStorage.getItem('token');
+    }
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.patch(`http://localhost:3000/api/rendezvous/${id}/statut`, { statut }, { headers });
   }

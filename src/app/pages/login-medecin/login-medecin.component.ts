@@ -99,6 +99,7 @@ export class LoginMedecinComponent implements OnInit {
           console.log('Connexion réussie', res);
           localStorage.setItem('tokenPro', res?.token); // <-- token stocké
           localStorage.setItem('role', res?.user?.role); // <-- token stocké
+          localStorage.setItem('user', JSON.stringify(res?.user));
 
           this.router.navigate(['/calendrierPro']);
         },
@@ -112,7 +113,11 @@ export class LoginMedecinComponent implements OnInit {
       this.authService.register(payload).subscribe({
         next: (res) => {
           console.log('Inscription réussie', res);
-          this.router.navigate(['/calendrier']);
+          localStorage.setItem('tokenPro', res?.token); // <-- token stocké
+          localStorage.setItem('role', res?.user?.role); // <-- token stocké
+          localStorage.setItem('user', JSON.stringify(res?.user));
+
+          this.router.navigate(['/calendrierPro']);
         },
         error: (err) => {
           const msg = err?.error?.message || 'Erreur lors de l\'inscription';
