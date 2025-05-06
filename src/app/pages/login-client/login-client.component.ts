@@ -47,12 +47,12 @@ export class LoginClientComponent implements OnInit {
   toggleMode() {
     this.isLoginMode = !this.isLoginMode;
     this.submitted = false;
-    this.initForm(); // <-- Recrée le formulaire selon le mode
+    this.initForm(); 
   }
 
   onSubmit() {
     this.submitted = true;
-    this.errorMessage = null; // Réinitialiser à chaque soumission
+    this.errorMessage = null; 
   
     console.log('Form state:', this.authForm.value);
   
@@ -79,8 +79,8 @@ export class LoginClientComponent implements OnInit {
       this.authService.login({ email: formValue.email, motDePasse: formValue.password }).subscribe({
         next: (res) => {
           console.log('Connexion réussie', res);
-          localStorage.setItem('tokenClient', res?.token); // <-- token stocké
-          localStorage.setItem('role', res?.user?.role); // <-- token stocké
+          localStorage.setItem('tokenClient', res?.token); 
+          localStorage.setItem('role', res?.user?.role); 
           localStorage.setItem('user', JSON.stringify(res?.user));
 
           this.router.navigate(['/calendrierClient']);
@@ -95,8 +95,8 @@ export class LoginClientComponent implements OnInit {
       this.authService.register(payload).subscribe({
         next: (res) => {
           console.log('Inscription réussie', res);
-          localStorage.setItem('tokenClient', res?.token); // <-- token stocké
-          localStorage.setItem('role', res?.user?.role); // <-- token stocké
+          localStorage.setItem('tokenClient', res?.token); 
+          localStorage.setItem('role', res?.user?.role); 
           localStorage.setItem('user', JSON.stringify(res?.user));
 
           this.router.navigate(['/calendrierClient']);

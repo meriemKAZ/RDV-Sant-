@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { LoginClientComponent } from './pages/login-client/login-client.component';
-import { CalendarMedecinComponent } from './pages/calendar-medecin/calendar-medecin.component';
+import { MedecinCalendarComponent } from './calendrier-medecin/calendrier-medecin.component';
 import { LoginMedecinComponent } from './pages/login-medecin/login-medecin.component';
 import { HomeComponent } from './pages/home/home.component';
 
@@ -20,7 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
     ReactiveFormsModule,
     AppComponent,
     LoginClientComponent,
-    CalendarMedecinComponent,
+    MedecinCalendarComponent,
     LoginMedecinComponent,
     HomeComponent,
   ],
